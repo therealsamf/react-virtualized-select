@@ -2365,7 +2365,8 @@
                 value: function(event) {
                     // The check for menu.contains(activeElement) is necessary to prevent IE11's scrollbar from closing the menu in certain contexts.
                     if (this.menu && (this.menu === document.activeElement || this.menu.contains(document.activeElement))) return void this.focus();
-                    null !== this.state.currentValue && this.removeValue(this.state.currentValue), this.props.onBlur && this.props.onBlur(event);
+                    null !== this.state.currentValue && void 0 !== this.state.currentValue && this.removeValue(this.state.currentValue), 
+                    this.props.onBlur && this.props.onBlur(event);
                     var onBlurredState = {
                         isFocused: !1,
                         isOpen: !1,
@@ -2631,7 +2632,8 @@
                     event && "mousedown" === event.type && 0 !== event.button || (event.preventDefault(), 
                     this.setValue(this.getResetValue()), this.setState({
                         inputValue: this.handleInputValueChange(""),
-                        isOpen: !1
+                        isOpen: !1,
+                        currentValue: null
                     }, this.focus), this._focusAfterClear = !0);
                 }
             }, {
