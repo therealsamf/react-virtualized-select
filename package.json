@@ -121,7 +121,7 @@
   "dependencies": {
     "babel-runtime": "^6.11.6",
     "prop-types": "^15.5.8",
-    "react-select": "^1.0.0-rc.2",
+    "react-select": "git+https://github.com/therealsamf/react-select.git",
     "react-virtualized": "^9.0.0"
   },
   "peerDependencies": {
